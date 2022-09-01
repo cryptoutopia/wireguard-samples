@@ -5,6 +5,15 @@ sample configs for different wireguard scenarios
 
 # easy setup
 
+
+## key management
+
+### private key
+`wg genkey > privatekey`
+
+### public key
+`cat privatekey | wg pubkey > publickey`
+
 ## server
 <pre>
 [Interface]
