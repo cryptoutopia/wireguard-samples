@@ -21,15 +21,15 @@ PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING 
 </pre>
 
 # peers section: pk, ips
-`
+<pre>
 [Peer]
 PublicKey = Peer PK
 AllowedIPs = 10.0.0.2
 PersistentKeepalive=30
-`
+</pre>
 
 ## client
-`
+<pre>
 [Interface]
 Address = 10.0.0.2/24
 PrivateKey = YOUR PK
@@ -40,7 +40,7 @@ PublicKey = Server PK
 AllowedIPs = 0.0.0.0/0
 Endpoint = 34.78.102.70:51820
 PersistentKeepalive = 30
-`
+</pre>
 
 
 
