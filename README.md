@@ -6,16 +6,19 @@ sample configs for different wireguard scenarios
 # easy setup
 
 ## server
-`
+<pre>
 [Interface]
 Address = 10.0.0.1/24
 ListenPort = 51820
 PrivateKey = YOUR PK
-`
+</pre>
+
+
 # Nat routing on the server part
+<pre>
 PostUp = iptables -A FORWARD -i wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o ens4 -j MASQUERADE
 PostDown = iptables -D FORWARD -i wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o ens4 -j MASQUERADE
-
+</pre>
 
 # peers section: pk, ips
 `
